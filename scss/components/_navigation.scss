@@ -1,0 +1,59 @@
+// ----------------------------------------------
+// NAV ITEM STYLES
+// ----------------------------------------------
+
+.nav__item {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+
+// ----------------------------------------------
+// NAV ITEM ANCHOR STYLES
+// ----------------------------------------------
+
+.nav__item a {
+  color: #757575;
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+  margin: 0;
+}
+
+.nav__item a:hover {
+  background-color: #57E1C0;
+  color: white;
+  border-radius: 5px;
+}
+
+// ----------------------------------------------
+// MEDIA QUERIES - MEDIUM
+// ----------------------------------------------
+
+.nav {
+  @include mq(medium) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.nav__item {
+  @include mq(medium) {
+    margin: auto;
+  }
+}
+
+// ----------------------------------------------
+// MEDIA QUERY - LARGE
+// ----------------------------------------------
+
+.nav {
+  @include mq(large) {
+    display: inline-flex;
+    flex-direction: row;
+    margin: auto;
+    margin-left: 17em;
+    margin-top: 1em;
+  }
+}

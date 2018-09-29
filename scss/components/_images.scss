@@ -1,0 +1,64 @@
+// ----------------------------------------------
+// IMG STYLES
+// ----------------------------------------------
+
+[class^="img"] {
+  display: block;
+  margin: auto;
+}
+
+.img--frame {
+  width: 90%;
+  max-width: 410px;
+  border: solid #bababa 1px;
+  padding: 0.8em;
+  margin-bottom: 2em;
+}
+
+.img--avatar {
+  max-width: 200px;
+}
+
+.img--avatar:last-child {
+  margin-bottom: 2em;
+} // targets the second .img--avatar class
+
+// ----------------------------------------------
+// MEDIA QUERY - MEDIUM
+// ----------------------------------------------
+
+.img--logo {
+  @include mq(medium) {
+    margin: 0 auto;
+  }
+}
+
+// ----------------------------------------------
+// MEDIA QUERIES - LARGE
+// ----------------------------------------------
+
+.img--logo {
+  @include mq(large) {
+    margin-top: 0;
+    margin-left: 7.5em;
+  }
+}
+
+.img--frame {
+  @include mq(large) {
+    width: 100%;
+    margin: 1em 5em 3em 4em;
+  }
+}
+
+.img--avatar {
+  @include mq(large) {
+    margin: auto;
+  }
+}
+
+.img--avatar:last-child {
+  @include mq(large) {
+    margin: 1em auto 3em 14em;
+  }
+} // targets the second .img--avatar class

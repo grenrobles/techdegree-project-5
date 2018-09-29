@@ -1,0 +1,73 @@
+// ----------------------------------------------
+// BTN STYLES
+// ----------------------------------------------
+
+[class^="btn--"] {
+  display: block;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  margin: auto;
+  margin-top: 1.5em;
+  border-radius: 5px;
+  border: none;
+  padding: 15px;
+  width: 95%;
+} // also targets the login button
+
+.btn--info {
+  margin-bottom: 1em;
+}
+
+// ----------------------------------------------
+// BTN THEME COLORS
+// ----------------------------------------------
+
+.btn--default.theme__colors {
+  background-color: #4edff2;
+}
+
+.btn--success.theme__colors {
+  background-color: #64cb82;
+}
+
+.btn--error.theme__colors {
+  background-color: #e4757b;
+}
+
+.btn--warning.theme__colors {
+  background-color: #fd775b;
+}
+
+.btn--info.theme__colors {
+  background-color: #927bc3;
+}
+
+// ----------------------------------------------
+// MEDIA QUERY - MEDIUM
+// ----------------------------------------------
+
+.btn--default,
+.btn--success,
+.btn--error,
+.btn--warning,
+.btn--info {
+  @include mq(medium) {
+    max-width: 40em;
+  }
+}
+
+// ----------------------------------------------
+// MEDIA QUERY - LARGE
+// ----------------------------------------------
+
+.grid__col--12 .btn--default,
+.btn--success,
+.btn--error,
+.btn--warning,
+.btn--info {
+  @include mq(large) {
+    margin: 3em 1em;
+    padding: 15px 50px;
+  }
+}

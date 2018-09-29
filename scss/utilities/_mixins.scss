@@ -1,0 +1,23 @@
+// ----------------------------------------------
+// MEDIA QUERY MIXIN
+// ----------------------------------------------
+
+@mixin mq($breakpoint){
+
+  @if $breakpoint == 'medium' {
+      @media(min-width: $medium-break){
+        @content;
+      }
+  } // @if end
+
+  @else if $breakpoint == 'large' {
+      @media(min-width: $large-break){
+        @content;
+      }
+  } // @else if end
+
+  @else {
+    @error "'#{$breakpoint}' is an invalid value.";
+  } // @else end
+
+} // @mixin end

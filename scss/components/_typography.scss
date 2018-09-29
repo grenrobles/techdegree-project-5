@@ -1,0 +1,78 @@
+// ----------------------------------------------
+// CONTAINER STYLES
+// ----------------------------------------------
+
+.container {
+  font-family: $lato-reg;
+  font-size: 17px;
+  color: #929292;
+}
+
+// ----------------------------------------------
+// LINK STYLES
+// ----------------------------------------------
+
+.link {
+  text-decoration: none;
+  color: #61C7ED;
+}
+
+// ----------------------------------------------
+// BLOCKQUOTE STYLES
+// ----------------------------------------------
+
+.blockquote {
+  border-left: solid #57E1C0 9px;
+  font-size: 24px;
+  font-style: italic;
+  margin-left: 0.8em;
+  padding-left: .8em;
+  line-height: 1.2;
+  margin-top: 1em;
+}
+
+// ----------------------------------------------
+// HEADLINE--PRIMARY STYLES
+// ----------------------------------------------
+
+.headline--primary {
+  color: #57E1C0;
+  line-height: 1;
+  font-weight: 900;
+  font-size: 30px;
+  margin: 0 2em 1.3em 0.8em;
+}
+
+// ----------------------------------------------
+// HEADLINE--SECONDARY STYLES
+// ----------------------------------------------
+
+.headline--secondary {
+  font-weight: 100;
+  margin-bottom: 2em;
+  margin-left: 2em;
+  color: #bababa;
+} // targets images, buttons and grid system headline
+
+.grid__col--8 .headline--secondary,
+.grid__col--4 .headline--secondary {
+  margin-top: 0;
+  margin-bottom: 1em;
+  margin-left: 0.5em;
+} // targets typography and form elements headlines
+
+// ----------------------------------------------
+// MEDIA QUERIES - LARGE
+// ----------------------------------------------
+
+.headline--secondary {
+  @include mq(large) {
+    margin-left: 0.5em;
+  }
+} // targets images, buttons and grid system headline
+
+.blockquote {
+  @include mq(large) {
+    width: 90%;
+  }
+}
