@@ -3,9 +3,9 @@
 // ----------------------------------------------
 
 .container {
-  font-family: $lato-reg;
-  font-size: 17px;
-  color: #929292;
+  font-family: $base__font--family;
+  font-size: $base__font--size;
+  color: $base__font--color;
 }
 
 // ----------------------------------------------
@@ -13,8 +13,7 @@
 // ----------------------------------------------
 
 .link {
-  text-decoration: none;
-  color: #61C7ED;
+  @extend %links;
 }
 
 // ----------------------------------------------
@@ -25,10 +24,9 @@
   border-left: solid #57E1C0 9px;
   font-size: 24px;
   font-style: italic;
-  margin-left: 0.8em;
   padding-left: .8em;
   line-height: 1.2;
-  margin-top: 1em;
+  margin: 1em 1.4em auto 1em;
 }
 
 // ----------------------------------------------
@@ -36,11 +34,7 @@
 // ----------------------------------------------
 
 .headline--primary {
-  color: #57E1C0;
-  line-height: 1;
-  font-weight: 900;
-  font-size: 30px;
-  margin: 0 2em 1.3em 0.8em;
+  @extend %headline-primary;
 }
 
 // ----------------------------------------------
@@ -48,31 +42,51 @@
 // ----------------------------------------------
 
 .headline--secondary {
-  font-weight: 100;
-  margin-bottom: 2em;
-  margin-left: 2em;
-  color: #bababa;
-} // targets images, buttons and grid system headline
+  @extend %headline-secondary;
+}
 
-.grid__col--8 .headline--secondary,
-.grid__col--4 .headline--secondary {
+.grid__col--8 .headline--secondary {
   margin-top: 0;
   margin-bottom: 1em;
-  margin-left: 0.5em;
-} // targets typography and form elements headlines
+  margin-left: 0em;
+} // targets typography headline
+
+
+.grid__col--4 .headline--secondary {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  margin-left: 2em;
+} // targets form elements headline
 
 // ----------------------------------------------
 // MEDIA QUERIES - LARGE
 // ----------------------------------------------
 
+.headline--primary {
+  @include mq(large) {
+    margin-top: 1em;
+  }
+}
+
 .headline--secondary {
   @include mq(large) {
     margin-left: 0.5em;
   }
-} // targets images, buttons and grid system headline
+}
+
+.grid__col--8 .headline--secondary,
+.grid__col--4 .headline--secondary {
+    @include mq(large) {
+      margin-top: 3em;
+      margin-bottom: 1em;
+      margin-left: 0;
+    }
+} // targets typography and form elements headlines
 
 .blockquote {
   @include mq(large) {
     width: 90%;
+    margin-left: 1em;
+    padding-left: 1.2em;
   }
 }

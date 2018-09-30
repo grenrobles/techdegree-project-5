@@ -21,8 +21,7 @@
 // ----------------------------------------------
 
 [class^="grid__col"] {
-  display: flex;
-  flex-direction: column;
+  @include fb(column);
 }
 
 .theme__colors {
@@ -41,37 +40,40 @@
   margin-bottom: 2.5em;
 }
 
-.grid__col--12 .card,
+.grid__col--12 .card {
+  margin: 2em 1.5em 3.5em 1.5em;
+} // targets the first .card class
+
 .grid__col--8 .card {
-  margin: 2em 1.5em 1.5em 1.5em;
-} // targets the first and second .card class
+  margin: 2em 1.7em 4em 1.8em;
+} // targets the second .card class
 
 .grid__col--3.theme__colors {
-  background-color: #DCB2EF;
+  background-color: map-get($grid-color,'col-3');
 }
 
 .grid__col--4.theme__colors {
-  background-color: #80E6FA;
+  background-color: map-get($grid-color,'col-4');
 }
 
 .grid__col--5.theme__colors {
-  background-color: #89D99C;
+  background-color: map-get($grid-color,'col-5');
 }
 
 .grid__col--6.theme__colors {
-  background-color: #38AEC8;
+  background-color: map-get($grid-color,'col-6');
 }
 
 .grid__col--7.theme__colors {
-  background-color: #D9A3A1;
+  background-color: map-get($grid-color,'col-7');
 }
 
 .grid__col--8.theme__colors {
-  background-color: #FE9E83;
+  background-color: map-get($grid-color,'col-8');
 }
 
 .grid__col--12.theme__colors {
-  background-color: #80E7D1;
+  background-color: map-get($grid-color,'col-12');
 }
 
 // ----------------------------------------------
@@ -96,27 +98,18 @@
 
 .container {
   @include mq(large) {
-    margin: 2.5em 6.5em;
+    margin: 2.5em 8em;
   }
 }
 
 .grid__row {
   @include mq(large) {
-    display: flex;
-    flex-direction: row;
-    margin: auto;
-    padding: 0;
-  }
+    @include fb(row) {
+      margin: auto;
+      padding: 0;
+    } // @include fb end
+  } // @include mq end
 }
-
-.grid__row .grid__col--12 {
-  @include mq(large) {
-    display: inline-flex;
-    flex-direction: row;
-    width: 100%;
-    margin: auto;
-    }
-} // also targets the buttons
 
 .grid__col--3.theme__colors,
 .grid__col--3.theme__colors:nth-last-of-type(1),
@@ -130,7 +123,7 @@
 .grid__col--12.theme__colors {
   @include mq(large) {
     display: inline-block;
-    margin: 0 0.75em 2em 0.75em;
+    margin: 0 0.75em 3em 0.75em;
     padding: 15px;
     width: 100%;
     text-align: center;
@@ -139,7 +132,7 @@
 
 .grid__col--12.theme__colors {
   @include mq(large) {
-    margin-top: 1.5em;
+    margin-top: 0.5em;
   }
 }
 
@@ -155,14 +148,20 @@
   }
 }
 
+.grid__col--12 {
+  @include mq(large) {
+    @include fb(row) {
+      margin: auto;
+      width: 95%;
+      } // @include fb end
+    } // @include mq end
+} // also targets the first .card class and buttons
+
 .grid__col--12 .card {
   @include mq(large) {
-    margin: 0;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    margin-left: 6em;
+    margin: 4em 0 2em 1.5em;
     padding: 0;
-    width: 85%;
+    width: 100%;
   }
 } // targets the first .card class
 
@@ -170,12 +169,12 @@
 .grid__col--8 .card {
   @include mq(large) {
     margin: 0;
-    margin-left: 6em;
+    margin-left: 2.5em;
+    margin-bottom: 4em;
     padding: 0;
     width: 100%;
   }
 } // targets the second .card class
-
 
 .grid__col--7.centered {
   @include mq(large) {

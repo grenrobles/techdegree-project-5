@@ -1,15 +1,66 @@
+// ----------------------------------------------
+// LINKS
+// ----------------------------------------------
+
 %links {
-
+  color: #61C7ED;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-%images {
+// ----------------------------------------------
+// IMAGES
+// ----------------------------------------------
 
+%img {
+  display: block;
+  margin: auto;
 }
 
-%headlines {
-
+%img-border {
+  border: solid #bababa 1px;
 }
+
+// ----------------------------------------------
+// HEADLINES
+// ----------------------------------------------
+
+%headline-primary {
+  color: #57E1C0;
+  line-height: 1;
+  font-weight: 900;
+  font-size: 30px;
+  margin: 0.5em auto 1.3em 0.8em;
+}
+
+%headline-secondary {
+  color: #BABABA;
+  font-weight: 100;
+  margin-bottom: 2em;
+  margin-left: 2em;
+}
+
+// ----------------------------------------------
+// NAV
+// ----------------------------------------------
 
 %nav-items {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
 
+%nav-anchors {
+  color: #757575;
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+  margin: 0;
+}
+
+%nav-hover {
+  background-color: #57E1C0;
+  color: white;
+  border-radius: 5px;
 }

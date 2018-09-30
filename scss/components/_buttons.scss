@@ -16,7 +16,7 @@
 } // also targets the login button
 
 .btn--info {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 // ----------------------------------------------
@@ -24,27 +24,27 @@
 // ----------------------------------------------
 
 .btn--default.theme__colors {
-  background-color: #4edff2;
+  background-color: map-get($btn-color,'default');
 }
 
 .btn--success.theme__colors {
-  background-color: #64cb82;
+  background-color: map-get($btn-color,'success');
 }
 
 .btn--error.theme__colors {
-  background-color: #e4757b;
+  background-color: map-get($btn-color,'error');
 }
 
 .btn--warning.theme__colors {
-  background-color: #fd775b;
+  background-color: map-get($btn-color,'warning');
 }
 
 .btn--info.theme__colors {
-  background-color: #927bc3;
+  background-color: map-get($btn-color,'info');
 }
 
 // ----------------------------------------------
-// MEDIA QUERY - MEDIUM
+// MEDIA QUERIES - MEDIUM
 // ----------------------------------------------
 
 .btn--default,
@@ -58,7 +58,7 @@
 }
 
 // ----------------------------------------------
-// MEDIA QUERY - LARGE
+// MEDIA QUERIES - LARGE
 // ----------------------------------------------
 
 .grid__col--12 .btn--default,
@@ -67,7 +67,33 @@
 .btn--warning,
 .btn--info {
   @include mq(large) {
-    margin: 3em 1em;
-    padding: 15px 50px;
+    @include fb(inline-row) {
+      margin-top: 2em;
+      margin-bottom: 2em;
+      padding: 15px 50px;
+    } // @include fb end
+  } // @inlclude mq end
+}
+
+.grid__col--12 .btn--default {
+  @include mq(large) {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+}
+
+.btn--success,
+.btn--error,
+.btn--warning {
+  @include mq(large) {
+    margin-left: 0.8em;
+    margin-right: 0.8em;
+  }
+}
+
+.btn--info {
+  @include mq(large) {
+    margin-left: 1em;
+    margin-right: 1em;
   }
 }

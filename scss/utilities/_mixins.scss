@@ -17,7 +17,43 @@
   } // @else if end
 
   @else {
-    @error "'#{$breakpoint}' is an invalid value.";
+    @error "'#{$breakpoint}' is an invalid entry.";
+  } // @else end
+
+} // @mixin end
+
+// ----------------------------------------------
+// FLEXBOX MIXIN
+// ----------------------------------------------
+
+@mixin fb($flex){
+
+  @if $flex == 'column' {
+    display: flex;
+    flex-direction: column;
+    @content;
+  } // @if end
+
+  @else if $flex == 'row' {
+    display: flex;
+    flex-direction: row;
+    @content;
+  } // @else if end
+
+  @else if $flex == 'inline-column' {
+    display: inline-flex;
+    flex-direction: column;
+    @content;
+  } // @else if end
+
+  @else if $flex == 'inline-row' {
+    display: inline-flex;
+    flex-direction: row;
+    @content;
+  } // @else if end
+
+  @else {
+    @error "'#{$flex}' is an invalid entry.";
   } // @else end
 
 } // @mixin end

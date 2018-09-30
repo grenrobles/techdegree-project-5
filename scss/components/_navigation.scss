@@ -3,10 +3,7 @@
 // ----------------------------------------------
 
 .nav__item {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  text-align: center;
+  @extend %nav-items;
 }
 
 // ----------------------------------------------
@@ -14,17 +11,11 @@
 // ----------------------------------------------
 
 .nav__item a {
-  color: #757575;
-  text-decoration: none;
-  display: block;
-  padding: 15px;
-  margin: 0;
+  @extend %nav-anchors;
 }
 
 .nav__item a:hover {
-  background-color: #57E1C0;
-  color: white;
-  border-radius: 5px;
+  @extend %nav-hover;
 }
 
 // ----------------------------------------------
@@ -33,8 +24,7 @@
 
 .nav {
   @include mq(medium) {
-    display: flex;
-    flex-direction: row;
+    @include fb(row);
   }
 }
 
@@ -45,15 +35,21 @@
 }
 
 // ----------------------------------------------
-// MEDIA QUERY - LARGE
+// MEDIA QUERIES - LARGE
 // ----------------------------------------------
 
 .nav {
   @include mq(large) {
-    display: inline-flex;
-    flex-direction: row;
-    margin: auto;
-    margin-left: 17em;
-    margin-top: 1em;
+    @include fb(inline-row) {
+      margin: auto;
+      margin-left: 14em;
+      margin-top: 1.2em;
+    } // @include fb end
+  } // @include mq end
+}
+
+.nav__item {
+  @include mq(large) {
+    margin-right: 0.7em;
   }
 }
